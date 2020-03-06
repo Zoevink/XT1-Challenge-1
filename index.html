@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Challenge 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="challenge1_style.css">
+
+
+
+    <!--Snelheidsmeter-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['gauge']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['Speed', 240],
+
+            ]);
+
+            var options = {
+                width: 400,
+                height: 150,
+                redFrom: 90,
+                redTo: 100,
+                yellowFrom: 75,
+                yellowTo: 90,
+                minorTicks: 5
+            };
+
+            var chart = new google.visualization.Gauge(document.getElementById('snelheidMeter'));
+
+            chart.draw(data, options);
+
+            setInterval(function() {
+                data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+                chart.draw(data, options);
+            }, 13000);
+            setInterval(function() {
+                data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+                chart.draw(data, options);
+            }, 5000);
+            setInterval(function() {
+                data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+                chart.draw(data, options);
+            }, 26000);
+
+        }
+    </script>
+
+    <!-- Brandstof -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Tank', 'Hoeveel procent'],
+                ['Tank vol', 70],
+                ['Tank leeg', 30],
+            ]);
+
+            var options = {
+                pieHole: 0.2,
+                backgroundColor: {
+                    fill: 'transparent'
+                },
+                colors: ['#6800C4', '#b22d2d', ],
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutDiagram'));
+            chart.draw(data, options);
+        }
+    </script>
+
+
+
+
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <!--menuBalk-->
+        <div class="grid-item item-1">
+            <!--Logo in menubalk-->
+            <img src="SpaceX_logo.png" class="logo" alt="spaceX">
+        </div>
+
+        <!--Titel informatie voertuig-->
+        <div class="grid-item item-2">
+            <div class="Informatie"> Informatie voertuig</div>
+        </div>
+
+        <!--Snelheid-->
+        <div class="grid-item item-3">
+            <div class="Snelheid">Snelheid</div>
+            <div id="snelheidMeter"></div>
+
+
+        </div>
+
+        <!--Brandstof-->
+        <div class="grid-item item-4">
+            <div class="Brandstof"> Brandstof</div>
+            <div id="donutDiagram" style="width: 200px; height: auto;"></div>
+        </div>
+
+        <!--Afstand-->
+        <div class="grid-item item-5">
+            <div class="Afstand"> Afstand afgelegd</div>
+
+            <canvas id="Diagram"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+            <script>
+                var gram = document.getElementById('Diagram').getContext('2d');
+                var chart = new Chart(gram, {
+
+                    //Diagram type
+                    type: 'line',
+
+                    // De Data
+                    data: {
+                        labels: ['MA', 'DI', 'WO', 'DO', 'VR', 'ZA', 'ZO'],
+                        datasets: [{
+                            label: 'Afstand in KM',
+                            backgroundColor: '#6800C4',
+                            borderColor: '#9013FE',
+                            data: [0, 10304, 25049, 34900, 55038, 66666, 90220]
+                        }]
+                    },
+                });
+            </script>
+
+
+
+        </div>
+        <!--Footer-->
+        <div class="grid-item item-6">
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,329 @@
+/*CSS Grids Stylesheet*/
+
+body {
+    background-image: linear-gradient(#357BB7, #1F354F);
+}
+
+/*Lijn diagram*/
+.curve_chart {
+    height: auto;
+    border: 1px solid;
+}
+
+
+
+/* iphone 8*/
+@media (min-width: 375px) {
+
+    .grid-container {
+        height: 100vh;
+        display: grid;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        grid-template:
+            "menubalk menubalk menubalk"60px 
+            "voertuig voertuig voertuig"70px 
+            "snelheid snelheid brandstof"200px 
+            "afstand afstand afstand"300px 
+            "footer footer footer"100px
+    }
+
+    .grid-item {
+        padding: 20px;
+    }
+
+    .Informatie {
+        font-family: "Roboto";
+        font-style: bold;
+        font-size: 24px;
+        color: white;
+        margin-left: 20px;
+    }
+
+
+    /* MenuBalk */
+    .item-1 {
+        grid-area: menubalk;
+        width: 100%;
+    }
+
+    /* Logo */
+    .logo {
+        z-index: 1;
+        width: 168px;
+        height: 21;
+        margin-left: 20px;
+
+    }
+
+    /* Voertuig tekst*/
+    .item-2 {
+        grid-area: voertuig;
+    }
+
+    /* Snelheid */
+    .item-3 {
+        grid-area: snelheid;
+        background-color: white;
+        border-radius: 20px;
+        margin-left: 20px;
+    }
+
+    .snelheidMeter {
+        justify-items: center;
+    }
+
+
+    /* Brandstof*/
+    .item-4 {
+        grid-area: brandstof;
+        background-color: white;
+        border-radius: 20px;
+        margin-right: 20px;
+    }
+
+    #donutDiagram {
+        width: 100px;
+        height: auto;
+    }
+
+    .Diagram {
+        z-index: 0;
+        width: 168px;
+        height: 21;
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80px;
+        width: auto;
+
+    }
+
+    /* opmaak snelheid, brandstof en afstand*/
+    .Snelheid,
+    .Brandstof,
+    .Afstand {
+        font-family: "Roboto";
+        font-style: bold;
+        font-size: 17px;
+        color: #357BB7;
+    }
+
+    /* Afstand */
+    .item-5 {
+        grid-area: afstand;
+        background-color: white;
+        border-radius: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+
+    /* Footer */
+    .item-6 {
+        grid-area: footer;
+
+    }
+
+
+
+    /* Ipad 10 inch*/
+    @media (min-width: 600px) {
+
+        .grid-container {
+            font-family: "Roboto";
+            font-style: bold;
+            height: 100vh;
+            display: grid;
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+            grid-template:
+                "menubalk menubalk menubalk"60px 
+                "voertuig voertuig voertuig"70px 
+                "snelheid snelheid brandstof"250px 
+                "afstand afstand afstand"350px 
+                "footer footer footer"
+        }
+
+        .grid-item {
+            padding: 20px;
+        }
+
+        /* MenuBalk */
+        .item-1 {
+            grid-area: menubalk;
+            width: 100%;
+        }
+
+        /* Logo */
+        .logo {
+            z-index: 1;
+            width: 168px;
+            height: 21;
+            margin-left: 20px;
+
+        }
+
+        /* Voertuig tekst*/
+        .item-2 {
+            grid-area: voertuig;
+        }
+
+        /* Snelheid */
+        .item-3 {
+            grid-area: snelheid;
+            background-color: white;
+            border-radius: 20px;
+            margin-left: 20px;
+        }
+
+
+        /* Brandstof*/
+        .item-4 {
+            grid-area: brandstof;
+            background-color: white;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+
+        .Diagram {
+            z-index: 0;
+            width: 168px;
+            height: 21;
+            display: block;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 120px;
+            width: auto;
+
+        }
+
+        /* opmaak brandstof*/
+        .Snelheid,
+        .Brandstof,
+        .Afstand {
+            font-family: "Roboto";
+            font-style: bold;
+            font-size: 20px;
+            color: #357BB7;
+        }
+
+
+        /* Afstand */
+        .item-5 {
+            grid-area: afstand;
+            background-color: white;
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        /* Footer */
+        .item-6 {
+            grid-area: footer;
+
+        }
+    }
+
+    /* Groter dan ipad 10 inch*/
+    @media (min-width: 810px) {
+
+        .grid-container {
+            font-family: "Roboto";
+            font-style: bold;
+            height: 100vh;
+            display: grid;
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+            grid-template:
+                "menubalk menubalk menubalk"60px 
+                "voertuig voertuig voertuig"70px 
+                "snelheid brandstof brandstof"400px 
+                "afstand afstand afstand"600px 
+                "footer footer footer"
+        }
+
+        .grid-item {
+            padding: 20px;
+        }
+
+        /* MenuBalk */
+        .item-1 {
+            grid-area: menubalk;
+            width: 100%;
+        }
+
+        /* Logo */
+        .logo {
+            z-index: 1;
+            width: 168px;
+            height: 21;
+            margin-left: 20px;
+
+        }
+
+        /* Voertuig tekst*/
+        .item-2 {
+            grid-area: voertuig;
+        }
+
+        /* Snelheid */
+        .item-3 {
+            grid-area: snelheid;
+            background-color: white;
+            border-radius: 20px;
+            margin-left: 20px;
+
+
+        }
+
+        /* Brandstof*/
+        .item-4 {
+            grid-area: brandstof;
+            background-color: white;
+            border-radius: 20px;
+            margin-right: 20px;
+        }
+
+        .Diagram {
+            z-index: 0;
+            width: 168px;
+            height: 21;
+            display: block;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            height: 200px;
+            width: auto;
+
+        }
+
+        .Snelheid,
+        .Brandstof,
+        .Afstand {
+            font-family: "Roboto";
+            font-style: bold;
+            font-size: 23px;
+            color: #357BB7;
+        }
+
+
+        /* Afstand */
+        .item-5 {
+            grid-area: afstand;
+            background-color: white;
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+
+        /* Footer */
+        .item-6 {
+            grid-area: footer;
+
+        }
+    }
